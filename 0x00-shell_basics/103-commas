@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -1a --group-directories-first | awk 'BEGIN {ORS = ","} {if ($0 != "." && $0 != "..") { if ($0 ~ /\/$/) { print $0 } else { print $0 "," } } } END { print "" }'
