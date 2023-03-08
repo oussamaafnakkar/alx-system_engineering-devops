@@ -1,7 +1,2 @@
 #!/bin/bash
-# Define the paths for the source and destination directories
-src_dir=$(pwd)
-dest_dir=$(dirname $(pwd))
-# Copy only the HTML files that are newer or do not exist in the destination directory
-rsync -av --ignore-existing --update --include="*.html" --exclude="*" "${src_dir}/" "${dest_dir}/"
-
+find . -maxdepth 1 -type f -name "*.html" -newer ../ -exec rsync -av '{}' ../ \;
