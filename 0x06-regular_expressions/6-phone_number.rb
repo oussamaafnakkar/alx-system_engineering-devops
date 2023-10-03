@@ -1,20 +1,7 @@
 #!/usr/bin/env ruby
 
-# Check if an argument is provided
-if ARGV.empty?
-  puts "Usage: #{$0} <phone_number>"
-  exit 1
-end
+# Use scan to find all matches of exactly 10 digits and join them
+matches = ARGV[0].scan(/^\d{10,10}$/)
 
-# Input phone number from the command line argument
-phone_number = ARGV[0]
-
-# Regular expression pattern for a 10-digit phone number
-pattern = /^\d{10}$/
-
-# Perform the regular expression match
-if pattern.match?(phone_number)
-  puts phone_number
-else
-  puts ""
-end
+# Display the matches (joined together if multiple)
+puts matches.join
