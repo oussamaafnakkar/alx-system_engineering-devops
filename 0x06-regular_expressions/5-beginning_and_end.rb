@@ -9,12 +9,8 @@ end
 # Input string from the command line argument
 input_string = ARGV[0]
 
-# Regular expression pattern
-pattern = /^h.n$/
+# Use scan to find all matches and join them
+matches = input_string.scan(/^h.n$/)
 
-# Perform the regular expression match
-if pattern.match?(input_string)
-  puts input_string
-else
-  puts ""
-end
+# Display the matches (joined together if multiple)
+puts matches.join
