@@ -1,0 +1,21 @@
++------------------------+        +----------------------+        +-----------------------+
+| DNS Resolution         |        | Hit Server IP        |        | Traffic is Encrypted  |
+|                        |        | on Appropriate Port |        |                       |
+|      (#dns)             |        |         (#server)    |        |         (#encryption)  |
++------------------------+        +----------------------+        +-----------------------+
+              |                                 |                            |
+              v                                 v                            v
++------------------------+        +----------------------+        +-----------------------+
+| Traffic Goes Through    |        | Request Distributed  |        | Web Server Answers   |
+| Firewall               |        | via Load Balancer    |        | Request by Serving   |
+|                        |        |                      |        | Web Page              |
+|      (#firewall)        |        |      (#loadbalancer)|        |      (#webserver)     |
++------------------------+        +----------------------+        +-----------------------+
+              |                                 |                            |
+              v                                 v                            v
++------------------------+        +----------------------+        +-----------------------+
+| App Server Generates    |        | App Server Requests  |        |                       |
+| Web Page               |        | Data from Database   |        |                       |
+|                        |        |                      |        |                       |
+|      (#appserver)       |        |      (#database)     |        |                       |
++------------------------+        +----------------------+        +-----------------------+
