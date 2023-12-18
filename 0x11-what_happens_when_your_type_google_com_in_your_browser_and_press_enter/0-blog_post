@@ -1,0 +1,28 @@
+{. Navigating the Web: A Simplified Journey .}
+
+Ever wondered what happens when you type "https://www.google.com" into your browser and hit Enter? Let's break down the process into simpler terms, exploring the key steps in the web stack.
+
+1. DNS Request:
+Your browser asks a DNS server to convert "www.google.com" into an IP address.
+
+2. TCP/IP:
+A connection is established between your browser and the server using TCP/IP, ensuring reliable data transfer.
+
+3. Firewall:
+Firewalls monitor and control incoming/outgoing traffic, safeguarding against unauthorized access and potential threats.
+
+4. HTTPS/SSL:
+Secure communication is enabled through HTTPS, with SSL/TLS encryption keeping your data private and secure.
+
+5. Load-Balancer:
+Large websites use load-balancers to evenly distribute traffic among multiple servers, optimizing performance.
+
+6. Web Server:
+The web server processes HTTP requests, retrieves resources, and sends them back to your browser.
+
+7. Application Server:
+For dynamic content, an application server executes logic, retrieves data, and generates content for the web server.
+
+8. Database:
+If needed, the application server communicates with a database server to retrieve required data.
+
