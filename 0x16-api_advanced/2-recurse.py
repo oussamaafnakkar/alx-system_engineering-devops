@@ -30,11 +30,9 @@ def recurse(subreddit, hot_list=[], after=None):
         after = data.get('data', {}).get('after')
         return recurse(subreddit, hot_list, after)  # Recursive call with updated 'after'
     elif response.status_code == 404:
-        print(f"Subreddit '{subreddit}' not found.")
-        return None
+        return None  # Return None directly for an invalid subreddit
     else:
-        print(f"Error: {response.status_code}")
-        return None
+        return None  # Return None for any other errors
 
 # Example usage
 if __name__ == '__main__':
@@ -49,3 +47,4 @@ if __name__ == '__main__':
             print(len(result))
         else:
             print("None")
+            
