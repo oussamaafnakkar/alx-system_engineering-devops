@@ -13,7 +13,8 @@ def number_of_subscribers(subreddit):
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         data = response.json()
-        return data.get('data').get('subscribers')
+        subscribers_count = data.get('data', {}).get('subscribers', 0)
+        return subscribers_count
     elif response.status_code == 404:
         print(f"Subreddit '{subreddit}' not found.")
         return 0
