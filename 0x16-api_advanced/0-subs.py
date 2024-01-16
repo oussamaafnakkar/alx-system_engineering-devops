@@ -16,8 +16,6 @@ def number_of_subscribers(subreddit):
         subscribers_count = data.get('data', {}).get('subscribers', 0)
         return subscribers_count
     elif response.status_code == 404:
-        print(f"Subreddit '{subreddit}' not found.")
-        return 0
+        return 0  # Return 0 directly for invalid subreddit
     else:
-        print(f"Error: {response.status_code}")
-        return 0
+        return 0  # Return 0 for any other errors
