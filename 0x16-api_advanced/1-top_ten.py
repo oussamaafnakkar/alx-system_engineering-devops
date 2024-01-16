@@ -5,7 +5,8 @@ for a given subreddit."""
 import requests
 
 def top_ten(subreddit):
-    """Prints the titles of the first 10 hot posts for a given subreddit.
+    """
+    Prints the titles of the first 10 hot posts for a given subreddit.
 
     Args:
         subreddit (str): The subreddit to query.
@@ -26,7 +27,7 @@ def top_ten(subreddit):
 
         for index, child in enumerate(children[:10]):
             title = child.get('data', {}).get('title')
-            print(f"{index + 1}. {title}")
+            print("{}. {}".format(index + 1, title))
     elif response.status_code == 404:
         print(f"Subreddit '{subreddit}' not found.")
     else:
