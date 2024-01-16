@@ -5,7 +5,17 @@ a list containing the titles of all hot articles for a given subreddit."""
 import requests
 
 def recurse(subreddit, hot_list=[], after=None):
-    """Recursive function to get titles of hot articles from a subreddit."""
+    """
+    Recursive function to get titles of hot articles from a subreddit.
+
+    Args:
+        subreddit (str): The subreddit to query.
+        hot_list (list): A list to store the titles of hot articles.
+        after (str): A parameter used for pagination.
+
+    Returns:
+        list or None: A list containing the titles of hot articles, or None if an error occurs.
+    """
     if not hot_list:
         hot_list = []  # Initialize hot_list if not provided
 
