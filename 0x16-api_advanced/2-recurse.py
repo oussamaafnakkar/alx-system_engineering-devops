@@ -14,7 +14,7 @@ def recurse(subreddit, hot_list=[], after=None):
         after (str): A parameter used for pagination.
 
     Returns:
-        list or None: A list containing the titles of hot articles, or None if an error occurs.
+        list: A list containing the titles of hot articles, or None if an error occurs.
     """
     if not hot_list:
         hot_list = []  # Initialize hot_list if not provided
