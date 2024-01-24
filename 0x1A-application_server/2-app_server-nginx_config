@@ -3,15 +3,15 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
-    # Use domain names of your servers
-    server_name 362144-web-01 yourdomain.com;
+    # Use IP addresses of your servers
+    server_name 34.201.164.248;
 
     # Customize HTTP response header
     add_header X-Served-By 362144-web-01;
 
     # Serve /airbnb-onepage/ route on AirBnB_clone_v3
     location /airbnb-onepage/ {
-        proxy_pass http://34.201.164.248:5000;
+        proxy_pass http://127.0.0.1:5000;
     }
 
     error_page 404 /404.html;
@@ -20,4 +20,3 @@ server {
         internal;
     }
 }
-
