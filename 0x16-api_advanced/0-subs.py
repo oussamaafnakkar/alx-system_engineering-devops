@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-import requests
+"""Task 0"""
+
 
 def number_of_subscribers(subreddit):
-    headers = {'User-Agent': 'MyBot/1.0'}
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    """Queries the Reddit API and returns the number of subscribert"""
+    import requests
 
-    if response.status_code == 200:
-        data = response.json()
-        if 'subscribers' in data['data']:
-            return data['data']['subscribers']
+    sub_info = requests.get("https://www.reddit.com/r/{}/about.json"
+                            .format(subreddit),
+                            headers={"User-Agent": "My-User-Agent"},
+                            allow_redirects=False)
+    if sub_info.status_code >= 300:
+        return 0
 
-    return 0
+    return sub_info.json().get("data").get("subscribers")
