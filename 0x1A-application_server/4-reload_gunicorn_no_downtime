@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 # Gracefully reloads Gunicorn.
-#shellcheck disable=SC2009
-ps aux | grep gunicorn | awk '{ print $2 }' | xargs kill -HUP
+# shellcheck disable=SC2009
+
+# Get the process IDs of Gunicorn
+gunicorn_pids=$(ps aux | grep gunicorn | awk '{ print $2 }')
+
+# Gracefully reload each Gunicorn process
+for pid in $gunicorn_pids; do
+    kill -HUP "$pid"
+done
